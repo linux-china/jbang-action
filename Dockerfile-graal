@@ -31,5 +31,6 @@ ENV PATH="${PATH}:/jbang/bin"
 
 ## github action does not allow writing to $HOME thus routing this elsewhere
 ENV JBANG_DIR="/jbang/.jbang"
+ENV JBANG_DEFAULT_JAVA_VERSION="17"
 
 ENTRYPOINT ["entrypoint"]

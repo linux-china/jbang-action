@@ -9,5 +9,5 @@ push-image17:
 build-image-graal:
   docker build -f Dockerfile-graal -t linuxchina/jbang-action:0.94.0-graal-java17-22.1.0 .
 
-push-image17:
+push-image-graal:
   docker push linuxchina/jbang-action:0.94.0-graal-java17-22.1.0

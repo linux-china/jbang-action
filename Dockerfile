@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17
+FROM adoptopenjdk:11-jdk-hotspot
 
 LABEL "org.opencontainers.image.title"="jbang"
 LABEL "org.opencontainers.image.description"="Unleash the power of Java"
@@ -23,6 +23,7 @@ ADD ./entrypoint /bin/entrypoint
 
 ENV SCRIPTS_HOME /scripts
 ENV JBANG_VERSION 0.94.0
+ENV JBANG_PATH=/jbang/bin
 
 VOLUME /scripts
 
@@ -30,6 +31,5 @@ ENV PATH="${PATH}:/jbang/bin"
 
 ## github action does not allow writing to $HOME thus routing this elsewhere
 ENV JBANG_DIR="/jbang/.jbang"
-ENV JBANG_DEFAULT_JAVA_VERSION="17"
 
 ENTRYPOINT ["entrypoint"]
